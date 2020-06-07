@@ -1,17 +1,55 @@
+
+$screen-md: 1200px; // Small screen / tablet
+$screen-lg: 1440px; // Large screen / desktop
+
+
+@mixin laptop {
+  @media screen and (max-width: $screen-md) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (max-width: $screen-lg) {
+    @content;
+  }
+}
+
 .checkout {
   display: flex;
   color: black;
   padding: 50px 220px;
   background-color: #f2f2f2;
 
+  @include laptop {
+    padding: 50px 20px;
+    flex-direction: column;
+  }
+
+  @include desktop {
+    padding: 50px 60px;
+  }
+
   &__details {
     width: 65%;
     box-sizing: border-box;
     padding-right: 20px;
+
+    @include laptop {
+      width: 100%;
+      padding-right: 0;
+    }
   }
 
   &__summary {
     width: 35%;
+    display: flex;
+    flex-direction: column;
+
+    @include laptop {
+      width: 100%;
+      flex-direction: column-reverse;
+    }
   }
 }
 
@@ -45,10 +83,18 @@
   &__inputs {
     margin-left: 50px;
     margin-bottom: 40px;
+
+    @include laptop {
+      margin-left: 0;
+    }
   }
 
   &__finalButton {
     margin-left: 50px;
+
+    @include laptop {
+      margin-left: 0;
+    }
 
     > button {
       cursor: pointer;
@@ -73,10 +119,16 @@
 }
 
 .summaryCard {
+  display: flex;
+  flex-direction: column;
   background: white;
   margin-top: 89px;
   padding: 8px;
   border-radius: 3px;
+
+  @include laptop {
+    margin-top: 30px;
+  }
 
   &__inner {
     height: 100%;
@@ -137,8 +189,16 @@
 .inputsRow {
   display: flex;
 
+  @include laptop {
+    flex-direction: column;
+  }
+
   &:not(:last-child) {
     padding-bottom: 40px;
+
+    @include laptop {
+      padding-bottom: 20px;
+    }
   }
 }
 
@@ -155,6 +215,11 @@
 
   &:not(:last-child) {
     margin-right: 20px;
+
+    @include laptop {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
   }
 
   > label {
@@ -199,6 +264,11 @@
 
   &:not(:last-child) {
     margin-right: 20px;
+
+    @include laptop {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
   }
 
   > label {
@@ -223,6 +293,10 @@
     img, i {
       height: 20px;
       padding-right: 30px;
+
+      @include laptop {
+        display: none;
+      }
     }
 
   }
@@ -249,7 +323,7 @@
 }
 
 .validationMessageSuccess {
-  margin-top: 40px;
+  margin-top: 30px;
   padding: 8px;
   background-color: white;
   border-radius: 3px;

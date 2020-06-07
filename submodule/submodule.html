@@ -63,12 +63,12 @@
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
-          <a href="#overview" class="mdl-layout__tab ">Bacon</a>
-          <a href="#checkout" class="mdl-layout__tab is-active">Checkout</a>
+          <a href="#overview" class="mdl-layout__tab is-active">Bacon</a>
+          <a href="#checkout" class="mdl-layout__tab">Checkout</a>
         </div>
       </header>
       <main class="mdl-layout__content">
-        <div class="mdl-layout__tab-panel" id="overview">
+        <div class="mdl-layout__tab-panel is-active" id="overview">
           <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
             <button id="btn_addMore" type="button">Yeah, I want more bacon!</button>
           </section>
@@ -76,7 +76,7 @@
             <img id="img_beacon" src="http://media.washtimes.com.s3.amazonaws.com/media/image/2015/02/23/bacon.jpg" alt="Bacon" style="width: 100%; height: 100%;">
           </section>
         </div>
-        <div class="mdl-layout__tab-panel is-active" id="checkout">
+        <div class="mdl-layout__tab-panel" id="checkout">
           <section class="checkout">
             <div class="checkout__details">
               <div class="checkoutForm">
@@ -132,7 +132,7 @@
                     <div class="flexedInputWithImage">
                       <label>Credit Card Number</label>
                       <div>
-                        <input type="text" placeholder="0000 - 0000 - 0000 - 0000" id="creditCardInput"/>
+                        <input type="text" placeholder="0000 0000 0000 0000" id="creditCardInput"/>
                         <img src="images/visa.svg"/>
                       </div>
                     </div>
