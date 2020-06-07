@@ -63,12 +63,12 @@
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
-          <a href="#overview" class="mdl-layout__tab is-active">Bacon</a>
-          <a href="#checkout" class="mdl-layout__tab">Checkout</a>
+          <a href="#overview" class="mdl-layout__tab ">Bacon</a>
+          <a href="#checkout" class="mdl-layout__tab is-active">Checkout</a>
         </div>
       </header>
       <main class="mdl-layout__content">
-        <div class="mdl-layout__tab-panel is-active" id="overview">
+        <div class="mdl-layout__tab-panel" id="overview">
           <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
             <button id="btn_addMore" type="button">Yeah, I want more bacon!</button>
           </section>
@@ -76,7 +76,7 @@
             <img id="img_beacon" src="http://media.washtimes.com.s3.amazonaws.com/media/image/2015/02/23/bacon.jpg" alt="Bacon" style="width: 100%; height: 100%;">
           </section>
         </div>
-        <div class="mdl-layout__tab-panel" id="checkout">
+        <div class="mdl-layout__tab-panel is-active" id="checkout">
           <section class="checkout">
             <div class="checkout__details">
               <div class="checkoutForm">
@@ -88,17 +88,17 @@
                   <div class="inputsRow">
                     <div class="flexedInput">
                       <label>First name</label>
-                      <input type="text" placeholder="Elon" />
+                      <input type="text" placeholder="Elon" id="nameInput"/>
                     </div>
                     <div class="flexedInput">
                       <label>Last name</label>
-                      <input type="text" placeholder="Musk" />
+                      <input type="text" placeholder="Musk" id="lastNameInput"/>
                     </div>
                   </div>
                   <div class="inputsRow">
                     <div class="flexedInput">
                       <label>First name</label>
-                      <input type="text" placeholder="elon@spacex.com" />
+                      <input type="text" placeholder="elon@spacex.com" id="emailInput"/>
                     </div>
                   </div>
                   <div class="inputsRow">
@@ -111,13 +111,13 @@
                     </div>
                     <div class="flexedInput">
                       <label>Postal Code</label>
-                      <input type="text" placeholder="10001" />
+                      <input type="text" placeholder="10001" id="postalInput"/>
                     </div>
                   </div>
                   <div class="inputsRow">
                     <div class="flexedInput">
                       <label>Phone Number</label>
-                      <input type="text" placeholder="(212) 692-93-92" />
+                      <input type="text" placeholder="(212) 692-93-92" id="numberInput"/>
                     </div>
                   </div>
                 </div>
@@ -132,7 +132,7 @@
                     <div class="flexedInputWithImage">
                       <label>Credit Card Number</label>
                       <div>
-                        <input type="text" placeholder="0000 - 0000 - 0000 - 0000" />
+                        <input type="text" placeholder="0000 - 0000 - 0000 - 0000" id="creditCardInput"/>
                         <img src="images/visa.svg"/>
                       </div>
                     </div>
@@ -141,18 +141,18 @@
                     <div class="flexedInputWithImage">
                       <label>Security code</label>
                       <div>
-                        <input type="password" placeholder="0000 - 0000 - 0000 - 0000" />
+                        <input type="password" placeholder="123" id="ccvInput"/>
                         <i class="material-icons">help_outline</i>
                       </div>
                     </div>
                     <div class="flexedInput">
                       <label>Expiration date</label>
-                      <input type="text" placeholder="MM / YY" />
+                      <input type="text" placeholder="MM/YY" id="expirationInput"/>
                     </div>
                   </div>
                 </div>
                 <div class="checkoutForm__finalButton">
-                  <button>
+                  <button id="submitBtn">
                     <i class="material-icons">shopping_cart</i>
                     Complete purchase
                   </button>
@@ -187,6 +187,16 @@
                     <p>Total</p>
                     <p class="summaryCard__total__price">$ 960</p>
                   </div>
+                </div>
+              </div>
+              <div class="validationMessageError validationMessageHide" id="validationMessageError">
+                <div>
+                  Validation error. Please fill form with correct values.
+                </div>
+              </div>
+              <div class="validationMessageSuccess validationMessageHide" id="validationMessageSuccess">
+                <div>
+                  Thank you for submit! You will be redirected to payment page...
                 </div>
               </div>
             </div>
@@ -251,7 +261,8 @@
     <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
     <!-- build:js(app/) ../../scripts/main.min.js -->
     <script src="scripts/main.js"></script>
-    <script src="scripts/submodule.js"></script>
+    <script src="scripts/submodule/submodule.js"></script>
+    <script src="scripts/submodule/checkoutValidator.js"></script>
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->

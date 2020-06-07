@@ -149,6 +149,9 @@
   display: flex;
   flex-direction: column;
   padding: 8px;
+  transition: border 400ms linear;
+  border: 1px solid white;
+
 
   &:not(:last-child) {
     margin-right: 20px;
@@ -191,6 +194,8 @@
   display: flex;
   flex-direction: column;
   padding: 8px;
+  transition: border 400ms linear;
+  border: 1px solid white;
 
   &:not(:last-child) {
     margin-right: 20px;
@@ -223,3 +228,43 @@
   }
 }
 
+.validationError {
+  border: 1px solid red;
+}
+
+.validationMessageError {
+  margin-top: 40px;
+  padding: 8px;
+  background-color: white;
+  border-radius: 3px;
+  > div {
+    border: 2px dashed indianred;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 12px;
+    color: red;
+    font-size: 1.2rem;
+    font-weight: bolder;
+  }
+}
+
+.validationMessageSuccess {
+  margin-top: 40px;
+  padding: 8px;
+  background-color: white;
+  border-radius: 3px;
+  > div {
+    border: 2px dashed #6bd400;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 12px;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bolder;
+  }
+}
+
+
+.validationMessageHide {
+  display: none;
+}
